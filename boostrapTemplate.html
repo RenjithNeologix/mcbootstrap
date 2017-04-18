@@ -1,0 +1,232 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap-responsive.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<style>
+		body{
+			color: #000;
+			margin:20px;
+		}
+		.table-container{
+			border: 1px solid #666;
+		}
+		.table-container .row-fluid{
+			border-bottom:1px solid #666;
+		}
+		.table-container .row-fluid:last-child{
+			border-bottom:none;
+		}
+		.table-container  .span4{
+			border-left:1px solid #666;
+			margin-left:0px;
+		}
+		.table-container .span4:first-child{
+			border-left:none;
+		}
+		.table-container .span4 .span4{
+			border: none;
+		}
+		.table-container .table-heading .span4,.table-container .span4 .span4{
+			padding:5px;
+		}
+		.CPSection{
+			margin-top:20px;
+		}
+		form .controls input[type=text]{
+			padding: 15px 6px;
+		}
+		.control-group{
+			margin-top: 20px;
+			padding: 0px 20px 0px;
+		}
+		#showCode{
+			margin-top:30px;
+			border: 1px solid #666;
+			background: #EEE;
+		}
+		@media screen and (max-width: 767px){
+			.table-container .span4{
+				border-left:none;
+			}
+			.table-container .span4 .span4:nth-child(2){
+				margin-left:20px;
+			}
+			table.table thead{
+				display: none;
+			}
+			table.table td{
+				display: block;
+			}
+			table.table tr td:first-child{
+				border: none;
+			}
+			table.table tr td:last-child{
+				border: none;
+				border-bottom:1px solid #666;
+			}
+			table.table tr td:nth-child(2){
+				 border:none;
+			}
+		}
+	</style>
+	<script>
+		$(document).ready(function(){
+			$('#tablegrid button.showCodeBtn,#formgrid button.showCodeBtn,#tableresp button.showCodeBtn').on('click', function(){
+				$('#showCode').text($(this).parent().parent().html());
+				var $target = $('html,body'); 
+				$target.animate({scrollTop: $target.height()}, 1000);
+			});
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<div class="navbar">
+			<div class="navbar-inner">
+				<a class="brand" href="#">TrialSmith</a>
+				<ul class="nav">
+					<li><a href="#tablegrid">Div Table</a></li>
+					<li><a href="#formgrid">Form</a></li>
+					<li><a href="#tableresp">Responsive Table</a></li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<div class="row-fluid">
+		<div class="span12"> <h1>Bootstrap System for TrialSmith</h1></div>
+	</div>
+	<div id="tablegrid" class="row-fluid">
+		<div class="row-fluid table-container">
+			<div class="row-fluid"><h3>Table with GRID System</h3></div>
+			<div class="row-fluid">
+				<div class="row-fluid table-heading hidden-phone">
+					<div class="span4">Column 1</div>
+					<div class="span4">Column 2</div>
+					<div class="span4">Column 3</div>
+				</div>
+				<div class="row-fluid">
+					
+					<div class="span4"><div class="span4 visible-phone">Column 1:</div><div class="span4">Row 1</div></div>
+					
+					<div class="span4"><div class="span4 visible-phone">Column 2:</div><div class="span4">Row 2</div></div>
+					
+					<div class="span4"><div class="span4 visible-phone">Column 3:</div><div class="span4">Row 3</div></div>
+				</div>
+				<div class="row-fluid">
+					<div class="span4"><div class="span4 visible-phone">Column 1:</div><div class="span4">Row 1</div></div>
+					
+					<div class="span4"><div class="span4 visible-phone">Column 2:</div><div class="span4">Row 2</div></div>
+					
+					<div class="span4"><div class="span4 visible-phone">Column 3:</div><div class="span4">Row 3</div></div>
+				</div>
+				<div class="row-fluid">
+					<div class="span4"><div class="span4 visible-phone">Column 1:</div><div class="span4">Row 1</div></div>
+					
+					<div class="span4"><div class="span4 visible-phone">Column 2:</div><div class="span4">Row 2</div></div>
+					
+					<div class="span4"><div class="span4 visible-phone">Column 3:</div><div class="span4">Row 3</div></div>
+				</div>
+				<div class="row-fluid">
+					<div class="span4"><div class="span4 visible-phone">Column 1:</div><div class="span4">Row 1</div></div>
+					
+					<div class="span4"><div class="span4 visible-phone">Column 2:</div><div class="span4">Row 2</div></div>
+					
+					<div class="span4"><div class="span4 visible-phone">Column 3:</div><div class="span4">Row 3</div></div>
+				</div>
+			</div>
+			
+			<button class="showCodeBtn">Show Source</button>
+		</div>
+	</div>
+	
+	<div class="clearfix"></div>
+	
+	<div id="formgrid" class="row-fluid CPSection">
+		<div class="row-fluid table-container">
+			<div class="row-fluid"><h3>Form in GRID System</h3></div>
+			<div class="row-fluid">
+				<form class="form-horizontal">
+					<div class="row-fluid">
+						<div class="span6 control-group">
+							<label class="control-label" for="inputName">Name</label>
+							<div class="controls">
+								<input type="text" id="inputName" placeholder="Name" class="input-xlarge">	
+							</div>
+						</div>
+					</div>
+					
+					<div class="row-fluid">
+						<div class="span6 control-group">
+							<label class="control-label" for="inputEmail">Email</label>
+							<div class="controls">
+								<input type="text" id="inputEmail" placeholder="Email" class="input-xlarge">	
+							</div>
+						</div>
+					</div>
+					
+					<div class="row-fluid">
+						<div class="span6 control-group">
+							<label class="control-label" for="inputGenderMale">Gender</label>
+							<div class="controls">
+								<label class="radio" for="radio-0">
+									<input type="radio" id="inputGenderMale" >	Male
+								</label>
+								<label class="radio" for="radio-0">
+									<input type="radio" id="inputGenderFemale">	Female
+								</label>
+							</div>
+						</div>
+					</div>
+					
+					<div class="row-fluid">
+						<div class="span6 control-group">
+							<label class="control-label" for="inputCountryIn">Country</label>
+							<div class="controls">
+								<label class="radio inline" for="radio-0">
+									<input type="radio" id="inputCountryIn" >	India
+								</label>
+								<label class="radio inline" for="radio-0">
+									<input type="radio" id="inputCountryOutIn" >	Outside India
+								</label>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<button class="showCodeBtn">Show Source</button>
+		</div>
+	</div>
+	
+	<div class="clearfix"></div>
+	
+	<div id="tableresp" class="row-fluid CPSection">
+		<div class="row-fluid table-container">
+			<div class="row-fluid"><h3>Table Responsive</h3></div>
+			<div class="row-fluid">
+				<table border="1" class="table">
+					<thead class="hiddem-phone">
+						<tr><th>Column 1</th><th>Column 2</th><th>Column 3</th></tr>
+					</thead>
+					<tbody>
+						<tr><td>Value 1</td><td>Value 2</td><td>Value 3</td></tr>
+						<tr><td>Value 1</td><td>Value 2</td><td>Value 3</td></tr>
+						<tr><td>Value 1</td><td>Value 2</td><td>Value 3</td></tr>
+						<tr><td>Value 1</td><td>Value 2</td><td>Value 3</td></tr>
+						<tr><td>Value 1</td><td>Value 2</td><td>Value 3</td></tr>
+						<tr><td>Value 1</td><td>Value 2</td><td>Value 3</td></tr>
+					</tbody>
+				</table>
+			</div>
+			<button class="showCodeBtn">Show Source</button>
+		</div>
+	</div>
+	
+	<div class="row-fluid">
+		<div class="row-fluid"><button onclick="javascript:document.getElementById('showCode').textContent='&nbsp;';">Clear</button></div>
+		<div class="row-fluid" id="showCode">&nbsp;</div>
+	</div>
+	
+	
+</body>
+</html>
